@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
@@ -67,4 +68,18 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
     implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.akbarabdul80'
+                artifactId = 'zero-devbase'
+                version = '1.0.0'
+            }
+        }
+    }
 }
