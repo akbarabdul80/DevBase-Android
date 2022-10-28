@@ -30,6 +30,7 @@ inline fun <reified T> MutableLiveData<DevState>.observer(
     owner: LifecycleOwner,
     crossinline onLoading: () -> Unit? = { },
     crossinline onResult: (T) -> Unit? = { },
+    crossinline onResultAll: (DevResponse<T>) -> Unit? = { },
     crossinline onFailed: (message: String) -> Unit? = { },
     crossinline onError: (Throwable) -> Unit? = { },
     crossinline onEmpty: () -> Unit? = { },
@@ -44,6 +45,7 @@ inline fun <reified T> MutableLiveData<DevState>.observer(
                 if (it.data.success != 0) {
                     it.data.data?.let { data ->
                         onResult.invoke(data as T)
+                        onResultAll.invoke(it.data)
                     } ?: it.data.message?.let { message -> onFailed.invoke(message) }
                     if (showMessageSuccess) it.data.message?.let { message ->
 
