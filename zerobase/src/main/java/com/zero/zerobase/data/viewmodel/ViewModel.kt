@@ -41,7 +41,7 @@ inline fun <reified T> MutableLiveData<DevState>.observer(
                 onLoading.invoke()
             }
             is DevState.Result<*> -> {
-                if (it.data.success == 0) {
+                if (it.data.success != 0) {
                     it.data.data?.let { data ->
                         onResult.invoke(data as T)
                     } ?: it.data.message?.let { message -> onFailed.invoke(message) }
