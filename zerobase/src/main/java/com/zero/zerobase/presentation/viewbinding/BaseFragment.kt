@@ -11,7 +11,9 @@ import dmax.dialog.SpotsDialog
 
 abstract class BaseFragment<T : androidx.viewbinding.ViewBinding> : Fragment() {
     val binding by lazy { getBinding() }
-    lateinit var spotsDialogWait: SpotsDialog
+    private val spotsDialogWait: SpotsDialog by lazy {
+        SpotsDialog(requireContext(), "Mohon Tunggu...")
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,10 +32,6 @@ abstract class BaseFragment<T : androidx.viewbinding.ViewBinding> : Fragment() {
         initData()
         initAction()
         initObserver()
-    }
-
-    private fun initSpotDialog() {
-        spotsDialogWait = SpotsDialog(requireContext(), getString(R.string.label_loading))
     }
 
     protected open fun initData() {

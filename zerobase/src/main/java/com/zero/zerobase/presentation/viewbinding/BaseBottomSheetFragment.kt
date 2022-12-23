@@ -11,7 +11,9 @@ import dmax.dialog.SpotsDialog
 
 abstract class BaseBottomSheetFragment<T : androidx.viewbinding.ViewBinding> : BottomSheetDialogFragment() {
     val binding by lazy { getBinding() }
-    lateinit var spotsDialogWait: SpotsDialog
+    val spotsDialogWait: SpotsDialog by lazy {
+        SpotsDialog(requireContext(), "Mohon Tunggu...")
+    }
 
     protected abstract val isDialogCancelable: Boolean
 

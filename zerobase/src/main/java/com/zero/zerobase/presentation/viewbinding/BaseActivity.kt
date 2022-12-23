@@ -7,7 +7,9 @@ import dmax.dialog.SpotsDialog
 
 abstract class BaseActivity<T : androidx.viewbinding.ViewBinding> : AppCompatActivity() {
     val binding by lazy { getBinding() }
-    lateinit var spotsDialogWait: SpotsDialog
+    val spotsDialogWait: SpotsDialog by lazy {
+        SpotsDialog(this, "Mohon Tunggu...")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
