@@ -1,11 +1,12 @@
 package com.zero.devbase
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.zero.devbase.databinding.ActivityMainBinding
+import com.zero.zerobase.presentation.utils.toast
+import com.zero.zerobase.presentation.viewbinding.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+    override fun initAction() {
+        super.initAction()
+        toast("Hello World")
     }
 }

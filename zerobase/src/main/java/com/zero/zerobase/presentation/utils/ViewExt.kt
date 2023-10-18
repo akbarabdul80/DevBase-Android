@@ -157,7 +157,7 @@ fun <V : ViewBinding> BaseFragment<V>.showDatePicker(
 }
 
 @SuppressLint("SimpleDateFormat")
-fun <V : ViewBinding> BaseActivity<V>.showDateTimePickter(
+fun <V : ViewBinding> BaseActivity<V>.showDateTimePicker(
     view: TextView,
     calendar: Calendar,
 ) {
