@@ -5,7 +5,7 @@
 </br>
 
 ## Download
-Go to the [Releases](https://github.com/skydoves/TransformationLayout/releases) to download latest version.
+Go to the [Releases](https://github.com/akbarabdul80/DevBase-Android/releases) to download latest version.
 
 ## Key Features
 
