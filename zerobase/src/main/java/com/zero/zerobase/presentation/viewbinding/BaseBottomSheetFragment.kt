@@ -15,6 +15,8 @@ abstract class BaseBottomSheetFragment<T : androidx.viewbinding.ViewBinding> : B
         SpotsDialog(requireContext(), "Mohon Tunggu...")
     }
 
+    private val TAG: String = this::class.java.simpleName
+
     protected abstract val isDialogCancelable: Boolean
 
     override fun onCreateView(

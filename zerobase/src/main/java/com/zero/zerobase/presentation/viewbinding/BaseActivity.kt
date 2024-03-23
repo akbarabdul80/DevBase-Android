@@ -11,6 +11,8 @@ abstract class BaseActivity<T : androidx.viewbinding.ViewBinding> : AppCompatAct
         SpotsDialog(this, "Mohon Tunggu...")
     }
 
+    private val TAG: String = this::class.java.simpleName
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

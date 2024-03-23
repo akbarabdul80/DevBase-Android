@@ -15,6 +15,7 @@ abstract class BaseFragment<T : androidx.viewbinding.ViewBinding> : Fragment() {
         SpotsDialog(requireContext(), "Mohon Tunggu...")
     }
 
+    private val TAG: String = this::class.java.simpleName
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onViewReady()

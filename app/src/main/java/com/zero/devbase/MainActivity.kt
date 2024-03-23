@@ -5,8 +5,17 @@ import com.zero.zerobase.presentation.utils.toast
 import com.zero.zerobase.presentation.viewbinding.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    override fun initUI() {
+        super.initUI()
+    }
+    override fun initData() {
+        super.initData()
+    }
+
     override fun initAction() {
         super.initAction()
-        toast("Hello World")
+    }
+    override fun initObserver() {
+        super.initObserver()
     }
 }

@@ -8,8 +8,6 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zero.zerobase.presentation.viewbinding.BaseActivity
 import com.zero.zerobase.presentation.viewbinding.BaseBottomSheetFragment
@@ -18,14 +16,6 @@ import com.zero.zerobase.utils.FORMAT_DATE
 import java.text.SimpleDateFormat
 import java.util.*
 
-fun <T, VH : BaseViewHolder> RecyclerView.bind(
-    dataAdapter: BaseQuickAdapter<T, VH>,
-    paramApply: (RecyclerView.(BaseQuickAdapter<T, VH>) -> Unit)? = null
-) {
-    adapter = dataAdapter
-    layoutManager = LinearLayoutManager(context)
-    paramApply?.invoke(this, dataAdapter)
-}
 
 fun View.animateClick() {
     val returned: () -> Unit = {
